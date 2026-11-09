@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f3d2e">
+    <title>Create Account | Pikolbol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="auth">
+        <aside class="auth-brand">
+            <a href="index.html" class="brand"><span class="brand-ball"></span>Pikolbol</a>
+
+            <div class="brand-copy">
+                <span class="eyebrow">Free to join</span>
+                <h1>Join the court. <span>Start playing.</span></h1>
+                <p>Create an account to reserve courts, track your bookings, and discover venues near you.</p>
+                <ul class="brand-points">
+                    <li>Free sign up</li>
+                    <li>Any partner venue</li>
+                    <li>Easy cancellation</li>
+                </ul>
+            </div>
+
+            <ol class="steps" aria-label="How it works">
+                <li>
+                    <span class="step-num">1</span>
+                    <strong>Sign up</strong>
+                    <span class="step-text">Create your free account</span>
+                </li>
+                <li>
+                    <span class="step-num">2</span>
+                    <strong>Pick a time</strong>
+                    <span class="step-text">Choose an open slot</span>
+                </li>
+                <li>
+                    <span class="step-num">3</span>
+                    <strong>Play</strong>
+                    <span class="step-text">Show up and enjoy the game</span>
+                </li>
+            </ol>
+        </aside>
+
+        <section class="auth-panel">
+            <div class="auth-card wide">
+                <h2>Create an account</h2>
+                <p class="muted">It only takes a minute.</p>
+
+                <div id="alert"></div>
+
+                <form id="register-form" novalidate>
+                    <div class="row">
+                        <div class="field">
+                            <label for="first_name">First name</label>
+                            <div class="input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <input type="text" id="first_name" name="first_name" placeholder="Juan" autocomplete="given-name" maxlength="50" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="last_name">Last name</label>
+                            <div class="input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <input type="text" id="last_name" name="last_name" placeholder="Dela Cruz" autocomplete="family-name" maxlength="50" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <div class="input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="100" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone <span class="optional">(optional)</span></label>
+                            <div class="input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                                <input type="tel" id="phone" name="phone" placeholder="09XXXXXXXXX" autocomplete="tel" maxlength="13">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="field">
+                            <label for="password">Password</label>
+                            <div class="input-wrap has-toggle">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                <input type="password" id="password" name="password" placeholder="Create a password" autocomplete="new-password" required>
+                                <button type="button" class="toggle-pass" data-target="password" aria-label="Show password">
+                                    <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.53 13.53 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                                </button>
+                            </div>
+                            <div class="strength" data-strength-for="password" data-level="0">
+                                <div class="strength-bars"><span></span><span></span><span></span><span></span></div>
+                                <span class="strength-label">8+ characters</span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="confirm_password">Confirm password</label>
+                            <div class="input-wrap has-toggle">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                <input type="password" id="confirm_password" name="confirm_password" placeholder="Repeat password" autocomplete="new-password" required>
+                                <button type="button" class="toggle-pass" data-target="confirm_password" aria-label="Show password">
+                                    <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.53 13.53 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        <span class="btn-text">Create Account</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                </form>
+
+                <p class="switch">Already have an account? <a href="login.html">Log in</a></p>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script type="module" src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f3d2e">
+    <title>Pikolbol</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(155deg, #17603a, #0f3d2e 60%, #0b2e22);
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import { auth, dashboardPath, getProfile } from './app.js';
+        import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js';
+
+        const stop = onAuthStateChanged(auth, async (user) => {
+            stop();
+            if (!user) {
+                location.replace('login.html');
+                return;
+            }
+            const profile = await getProfile(user.uid);
+            location.replace(profile && profile.status === 'active' ? dashboardPath(profile.role) : 'login.html');
+        });
+    </script>
+</body>
+</html>
